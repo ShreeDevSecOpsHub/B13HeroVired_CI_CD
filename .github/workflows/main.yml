@@ -34,10 +34,9 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 22
         script: |
-          ls -l
+          ls -al
           whoami
           pwd
           sudo cp -r * /var/www/html
           sudo systemctl restart nginx
           
-      
