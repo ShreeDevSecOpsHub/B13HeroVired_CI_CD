@@ -17,5 +17,5 @@ jobs:
       run: ls -l
 
     - name: Check file size
-      run: df -ht
+      run: df -hT
       
