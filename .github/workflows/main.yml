@@ -15,7 +15,18 @@ jobs:
 
     - name: Run some bash commend
       run: ls -l
+      
+    - name: Copy code to EC2
+      uses: appleboy/scp-action@v1
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ EC2_SSH_KEY }}
+        port: 22
+        source: ./
+        target: ./
 
+      
     - name: Check file size
       run: df -hT
       
