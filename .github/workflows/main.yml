@@ -15,4 +15,7 @@ jobs:
 
     - name: Run some bash commend
       run: ls -l
+
+    - name: Check file size
+      run: df -ht
       
