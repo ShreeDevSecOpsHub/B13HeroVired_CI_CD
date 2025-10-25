@@ -26,14 +26,14 @@ jobs:
         source: ./
         target: ./
 
-    - name: Copy code to EC2
+    - name: Copy files to /var/www/html
       uses: appleboy/scp-action@v1
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 22
-        script:
+        script: |
           ls -l
           whoami
           pwd
